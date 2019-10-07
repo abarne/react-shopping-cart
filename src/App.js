@@ -20,15 +20,10 @@ function App() {
 		setCart([ ...cart, item ]);
 	};
 
-	const removeItem = (item) => {
-		var index = cart.indexOf(item.target.value);
-		delete cart[index];
-	};
-
 	return (
 		<div className="App">
-			<ProductContext.Provider value={{ products, addItem, removeItem }}>
-				<CartContext.Provider value={{ cart, removeItem }}>
+			<ProductContext.Provider value={{ products, addItem }}>
+				<CartContext.Provider value={cart}>
 					<Navigation cart={cart} />
 
 					{/* Routes */}
